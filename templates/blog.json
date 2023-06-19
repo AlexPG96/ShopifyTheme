@@ -1,5 +1,4 @@
 {
-    "name": "Template Blog",
     "sections": {
         "template": {
             "type": "template-blog"

@@ -46,11 +46,11 @@ Swiper JS for carousels
       </div>
 
       <div class="md:hidden">
-        <div class="swiper h-94">
+        <div class="swiper">
           <div class="swiper-wrapper">
             {% for media in product.media %}
               <div class="swiper-slide">
-                <div class="h-80 overflow-hidden p-2">
+                <div class="h-[100vw] overflow-hidden p-2">
                   {% render 'product-media', media: media %}
                 </div>
               </div>
@@ -236,7 +236,7 @@ Swiper JS for carousels
       form_input.value = this.currentVariant.id
     }
 
-updatePrice() {
+/* updatePrice() {
       fetch(`${
         this.dataset.url
       }?variant=${
@@ -262,16 +262,23 @@ updatePrice() {
   customElements.define('variant-selector', VariantSelector);
   */
 </script><script>
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next'
+
+document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next'
+      }
+    });
+  } catch (error) {
+    console.log('SwiperJS is not define', error);
   }
-});
+})
 </script>{% schema %}
 {
   "name": "Product",

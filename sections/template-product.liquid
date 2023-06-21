@@ -187,7 +187,8 @@ Swiper JS for carousels
       if (this.currentVariant) {
         this.updateURL();
         this.updateFormID();
-        this.updatePrice();
+
+// this.updatePrice();
       }
     }
 
@@ -236,7 +237,7 @@ Swiper JS for carousels
       form_input.value = this.currentVariant.id
     }
 
-    updatePrice() {
+/* updatePrice() {
       fetch(`${
         this.dataset.url
       }?variant=${
@@ -256,7 +257,7 @@ Swiper JS for carousels
           oldPrice.innerHTML = newPrice.innerHTML
         }
       })
-    }
+    } */
   }
 
   customElements.define('variant-selector', VariantSelector);

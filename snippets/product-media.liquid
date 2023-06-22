@@ -13,9 +13,9 @@
   {{ media | video_tag: controls: true, muted: true, loop: true, class: 'w-full h-80 object-cover' }}
 
   {% when 'model' %}
-  {{ media | model_viewer_tag }}
+  {{ media | model_viewer_tag: class: 'w-full h-80 object-cover' }}
 
 {% else %}
-  {{ media | media_tag }}
+  {{ media | media_tag: class: 'w-full h-80 object-cover' }}
 
 {% endcase %}
